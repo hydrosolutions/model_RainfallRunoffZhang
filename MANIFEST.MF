@@ -1,0 +1,7 @@
+Manifest-Version: 1.0
+Ant-Version: Apache Ant 1.9.2
+Created-By: 1.8.0_45-b14 (Oracle Corporation)
+Title: OpenDA
+Version: 2.0.-1 July 20 2015
+Vendor: hydrosolutions ltd.
+

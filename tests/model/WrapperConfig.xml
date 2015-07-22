@@ -23,7 +23,8 @@
         <!-- define actions relative to working dir. -->
         <computeActions>
             <action macExe="%binDir%/matlab_batcher.sh" workingDirectory="%instanceDir%" >
-            	<arg>"/Users/beamarti/Documents/openDAdev/public/model_RainfallRunoffZhang/tests/model/bin/"</arg>
+                <arg>"same_as_script"</arg>
+            	<!-- <arg>"/Users/beamarti/Documents/openDAdev/public/model_RainfallRunoffZhang/tests/model/bin/"</arg> -->
                 <arg>"rainfallRunoffModel"</arg>
                 <checkReturnStatus expect="0"/>
             	<checkOutput file="%outputFile%"/>

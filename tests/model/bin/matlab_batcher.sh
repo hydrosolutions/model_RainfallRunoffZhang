@@ -6,14 +6,22 @@
 
 #echo "<OUTPUT>" # Content of blackbox model is written between <output> by openDA.
 
+# What is the script location? Gives the full path of this script no matter where it is being called from.
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+
 # Removes first and last quote of first argument.
 temp1=${1}
 temp1="${temp1#\"}" # Remove first fit at the front of the string.
 temp1="${temp1%\"}" # Remove first fit at the back of the string.
 #echo "$temp1"
 
+# If the first argument of this script is "same_as_script" then use DIR as bin-path.
+if [ "$temp1" == "same_as_script" ]; then
+    temp1=$DIR
+fi
+
 temp2=${2}
-echo "$temp2"
+#echo "$temp2"
 temp2="${temp2#\"}" # Remove first fit at the front of the string.
 temp2="${temp2%\"}" # Remove first fit at the back of the string.
 #echo "$temp2"
@@ -22,10 +30,12 @@ temp2="${temp2%\"}" # Remove first fit at the back of the string.
 # Store current MATLABPATH
 old=$MATLABPATH
 export MATLABPATH=$temp1
+echo MATLABPATH=$MATLABPATH
 
 MATLAB_EXECUTABLE=/Applications/MATLAB_R2015a.app/bin/matlab
 
 ## matlab command by parsing the matlabFunction.
+echo $MATLAB_EXECUTABLE -nojvm -nodisplay -nosplash -r "$temp2; exit"
 $MATLAB_EXECUTABLE -nojvm -nodisplay -nosplash -r "$temp2; exit"
 
 # Restore matlab path

@@ -1,5 +1,14 @@
-The module model_RainfallRunoffZhang contains wrappers for an example rainfall runoff model that is programmed in matlab. The wrapper and model (available in tests/model/bin) have been tested extensively.
+The module model_RainfallRunoffZhang contains wrappers for an example rainfall runoff model that is programmed in matlab. 
+The wrapper and model (available in tests/model/bin) have been tested extensively.
 
 Ant is used to build the jars. The description of how to build the module is given in the openDA documentation.
+
+Installation guide for mac:
+- Open ~/.profile (not ~./bashrc as stated in the openDA installation guides. 
+  ~/.bashrc is not read automatically upon login). Add the following lines:
+      $ export OPENDADIR=<bindir>
+      $ . $OPENDADIR/setup_openda.sh 
+  <bindir> is the path to the bin openDA-bin directory where you stored the jar
+  files. For example /Application/openDA_2.2/bin/. 
 
 author: Beatrice Marti, hydrosolutions ltd., marti@hydrosolutions.ch
